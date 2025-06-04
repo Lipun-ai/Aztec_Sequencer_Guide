@@ -20,9 +20,12 @@
 
 - Sepolia Rpc URL
 
+first create firewall
+•  Add This + allow port (as per video):
+```
+ 0.0.0.0/0
+```
 
-
-# Install All Require Dependecies
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
@@ -155,4 +158,9 @@ curl -s -X POST -H 'Content-Type: application/json' \
 -d '{"jsonrpc":"2.0","method":"node_getArchiveSiblingPath","params":["BLOCK_NUMBER","BLOCK_NUMBER"],"id":67}' \
 http://localhost:8080 | jq -r ".result"
 ```
+•  Find Peer id:
+````
+sudo docker logs $(docker ps -q --filter ancestor=aztecprotocol/aztec:alpha-testnet | head -n 1) 2>&1 | grep -i "peerId" | grep -o '"peerId":"[^"]*"' | cut -d'"' -f4 | head -n 1
+````
+ Web Link (aztec explorer) : https://aztec.nethermind.io/
  
