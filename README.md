@@ -25,7 +25,7 @@ first create firewall
 ```
  0.0.0.0/0
 ```
-
+starting command
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
